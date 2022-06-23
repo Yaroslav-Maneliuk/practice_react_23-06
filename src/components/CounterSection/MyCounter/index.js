@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import styles from "./RandomCounter.module.css";
+import styles from "./MyCounter.module.css";
 
 class MyCounter extends Component {
   constructor(props) {
     super(props);
     this.state = {
       count: 0,
-      IsIncrementOrDecrement: true,
+      isIncrement: true,
     };
   }
   switchState = () => {
-    const { IsIncrementOrDecrement } = this.state;
-    this.setState({ IsIncrementOrDecrement: !IsIncrementOrDecrement });
+    const { isIncrement } = this.state;
+    this.setState({ isIncrement: !isIncrement });
   };
 
   increment = () => {
@@ -30,9 +30,9 @@ class MyCounter extends Component {
     });
   };
 
-  AddOrSubstruction = () => {
-    const { IsIncrementOrDecrement } = this.state;
-    if (IsIncrementOrDecrement) {
+  addOrSubstruction = () => {
+    const { isIncrement } = this.state;
+    if (isIncrement) {
       this.increment();
     } else {
       this.decrement();
@@ -40,15 +40,15 @@ class MyCounter extends Component {
   };
 
   render() {
-    const { count, IsIncrementOrDecrement } = this.state;
+    const { count, isIncrement } = this.state;
     return (
       <article className={styles.container}>
         <h2 className={styles.counter}>count: {count}</h2>
         <h2 className={styles.counter}>step: {count}</h2>
-        <button className={styles.btn} onClick={this.AddOrSubstruction}>
-          {IsIncrementOrDecrement ? "ADD" : "SUBSTRUCTION"}
+        <button className={styles.btn} onClick={this.addOrSubstruction}>
+          {isIncrement ? "ADD" : "SUBSTRUCTION"}
         </button>
-        <button className={styles.btn} onClick={this.IsIncrementOrDecrement}>
+        <button className={styles.btn} onClick={this.switchState}>
           CHANGE
         </button>
       </article>
