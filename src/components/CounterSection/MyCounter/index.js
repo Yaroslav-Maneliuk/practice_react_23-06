@@ -4,7 +4,10 @@ import styles from "./RandomCounter.module.css";
 class MyCounter extends Component {
   constructor(props) {
     super(props);
-    this.state = { count: 0, IsIncrementOrDecrement: true };
+    this.state = {
+      count: 0,
+      IsIncrementOrDecrement: true,
+    };
   }
   switchState = () => {
     const { IsIncrementOrDecrement } = this.state;
@@ -43,7 +46,7 @@ class MyCounter extends Component {
         <h2 className={styles.counter}>count: {count}</h2>
         <h2 className={styles.counter}>step: {count}</h2>
         <button className={styles.btn} onClick={this.AddOrSubstruction}>
-        {IsIncrementOrDecrement ? "ADD" : "SUBSTRUCTION"}
+          {IsIncrementOrDecrement ? "ADD" : "SUBSTRUCTION"}
         </button>
         <button className={styles.btn} onClick={this.IsIncrementOrDecrement}>
           CHANGE
