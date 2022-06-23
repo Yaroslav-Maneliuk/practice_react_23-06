@@ -1,10 +1,12 @@
 import "./App.css";
-import RandomCounter from "./components/RandomCounter";
+import MyCounter from "./components/CounterSection/MyCounter";
 
-function App() {
-  return <>
-    <RandomCounter />
-  </>;
-}
+const App = () => {
+  return (
+    <>
+      <MyCounter />
+    </>
+  );
+};
 
 export default App;

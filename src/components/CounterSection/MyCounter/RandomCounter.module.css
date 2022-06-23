@@ -1,0 +1,15 @@
+.container {
+  margin: auto;
+  width: 300px;
+  height: 150px;
+  border: 2px solid teal;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin-left: 70px;
+}
